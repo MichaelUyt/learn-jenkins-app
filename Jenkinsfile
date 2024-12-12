@@ -31,10 +31,8 @@ pipeline {
                             reuseNode true
                         }
                     }
-
                     steps {
                         sh '''
-                            #test -f build/index.html
                             npm test
                         '''
                     }
@@ -44,9 +42,7 @@ pipeline {
                         }
                     }
                 }
-
-               }
-            }
+            } // Sluit parallel blok correct af
         }
 
         stage('Deploy') {
